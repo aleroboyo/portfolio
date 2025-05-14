@@ -11,6 +11,26 @@ html, body {
     padding: 0;
 }
 
+@font-face {
+    font-family: "MontserratRoman-ExtraLight";
+    src: url("./fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gurmukhi MN";
+    src: url("./fonts/Gurmukhi\ MN.ttc") format("truetype");
+}
+
+@font-face {
+    font-family: "NIGHTMARE PILLS";
+    src: url("./fonts/NightmarePills-BV2w.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Harry Potter";
+    src: url("./fonts/HarryPotter-ov4z.ttf") format("truetype");
+}
+
 #welcome_page {
     display: flex;
     flex-direction: column;
@@ -343,6 +363,17 @@ main {
     text-align: center;
 }
 
+#my_contact,
+#my_resume {
+    background-color: rgb(136, 136, 102);
+    border-radius: 1.5rem;
+    padding: 1rem;
+}
+
+#my_contact{
+    margin-right: 1rem;
+}
+
 #html,
 #javascript,
 #css,
@@ -501,9 +532,7 @@ footer {
 #email_bt {
     position: relative;
     bottom: 1rem;
-    /*border-style: solid;*/
     padding: 1rem;
-   /* border-radius: 2.5rem;*/
    cursor: url("../images/cd87e2c0-90d4-4f25-9268-f88e979680b5_optimized_150.png") 0 0, auto;
 }
 
@@ -530,29 +559,28 @@ html {
     animation: walk 10s infinite linear;
   }
   
-  /* Keyframes for the footprints walking animation */
   @keyframes walk {
     0% {
-      left: -50px; /* Start from outside the left side of the screen */
-      top: 50%; /* Start from the middle of the screen */
+      left: -50px; 
+      top: 50%; 
     }
     25% {
-      left: 10%; /* Move to a bit right */
+      left: 10%;
       top: 40%;
     }
     50% {
-      left: 30%; /* Further to the right */
+      left: 30%;
       top: 30%;
     }
     75% {
-      left: 50%; /* Even further */
+      left: 50%; 
       top: 40%;
     }
     100% {
-      left: 100%; /* End at the right side of the screen */
+      left: 100%;
       top: 50%;
     }
   }
   
-  /* You can add more footprints with different animations or positions */
+
   

@@ -59,10 +59,10 @@ body.night {
     top: 12rem;
 }
 
-#explore_bt:hover {
+/*#explore_bt:hover {
     background: #f3e1ab;
     color: #000;
-}
+}*/
 
 .smoke_container {
     position: absolute;
@@ -313,12 +313,29 @@ main {
     text-align: center;
     font-family: NIGHTMARE PILLS;
     font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.skill_logos_container {
+    overflow: hidden;
 }
 
 .skill_logos {
     display: flex;
     justify-content: space-between;
+    width: calc(200%); 
+    animation: scrollSkills 15s linear infinite;
 }
+
+@keyframes scrollSkills {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
 
 #more_details{
     position: relative;
@@ -390,7 +407,7 @@ a {
     gap: 20px;
     padding: 60px 20px 20px 20px;
     margin: 0;
-    background-color: black; /* Optional: dark dropdown background */
+    background-color: black; 
     position: fixed;
     top: 0;
     right: 0;
@@ -435,10 +452,10 @@ a {
     padding: 10px;
 }
 
-.close:hover {
+/*.close:hover {
     color: black;
     background-color: white;
-}
+}*/
 
 #logo {
     width: 9rem;

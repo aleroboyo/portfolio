@@ -26,3 +26,4 @@ function setMoodBackground() {
 }
 
 window.onload = setMoodBackground;
+

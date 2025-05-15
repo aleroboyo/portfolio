@@ -9,7 +9,7 @@ html, body {
     height: 100vh;
     margin: 0 auto;
     padding: 0;
-    cursor:;
+    cursor: none;
 }
 
 @font-face {
@@ -30,6 +30,13 @@ html, body {
 @font-face {
     font-family: "Harry Potter";
     src: url("./fonts/HarryPotter-ov4z.ttf") format("truetype");
+}
+
+.wand_cursor {
+    position: fixed;
+    width: 40px;
+    pointer-events: none;
+    z-index: 1000;
 }
 
 #welcome_page {
@@ -102,7 +109,7 @@ body.night {
     bottom: 20%;
     left: -15%;
     opacity: 0.3; 
-    animation: drift 40s infinite linear;
+    animation: drift 10s infinite linear;
 }
 
 .smoke {
@@ -116,7 +123,7 @@ body.night {
     background: radial-gradient(closest-side, rgba(255, 255, 255, 0.3), transparent);
     filter: blur(60px);
     opacity: 0.7;
-    animation: smokeMove 8s infinite ease-in-out;
+    animation: smokeMove 15s infinite ease-in-out;
     z-index: 1;
 }
 
@@ -236,6 +243,7 @@ main {
 
 .parchment_container {
     display: grid;
+    animation: fadeUp 0.6s ease-out forwards;
 }
 
 .parchment {
@@ -246,10 +254,9 @@ main {
     transition: transform 0.5s ease, box-shadow 0.8s ease;
     position: relative;
     bottom: 30rem;
-    left: 2rem;
+    left: 3rem;
     padding-bottom: 5rem;
     overflow: hidden;
-    cursor: ;
 }
 
 .parchment:hover {
@@ -263,7 +270,6 @@ main {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1); /* subtle light overlay */
     transform: skewX(-25deg);
     transition: left 0.7s ease-in-out;
 }
@@ -271,6 +277,13 @@ main {
 .parchment:hover::after {
     left: 125%;
 }
+
+@keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 .home_open {
     position: relative;
@@ -382,6 +395,23 @@ main {
     width: 35px;
 }
 
+.footprint {
+    position: absolute;
+    width: 20px;
+    opacity: 0.4;
+    transform: rotate(var(--angle, 45deg));
+    transition: transform 3s linear, left 3s linear, top 3s linear;
+    z-index: 10;
+    animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
+  100% { opacity: 0; }
+}
+
 #background4 {
    color: white;
 }
@@ -420,7 +450,7 @@ main {
     margin-bottom: 3rem;
     font-family: MontserratRoman-ExtraLight;
     font-weight: lighter;
-    
+    transition: transform 0.5s ease, box-shadow 0.8s ease;   
 }
 
 .project_content:hover {
@@ -638,42 +668,9 @@ footer {
     font-weight: bolder;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
 
-.footprint {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: url('./images/shoes-boot-simple-shoes-printing-sports-shoes-hiking-boot-footprint-blackandwhite-png-clipart-removebg-preview.png') no-repeat center center;
-    background-size: contain;
-    animation: walk 10s infinite linear;
-  }
-  
-  @keyframes walk {
-    0% {
-      left: -50px; 
-      top: 50%; 
-    }
-    25% {
-      left: 10%;
-      top: 40%;
-    }
-    50% {
-      left: 30%;
-      top: 30%;
-    }
-    75% {
-      left: 50%; 
-      top: 40%;
-    }
-    100% {
-      left: 100%;
-      top: 50%;
-    }
-  }
+
   
 
   

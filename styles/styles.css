@@ -37,7 +37,6 @@ html, body {
 }
 
 .wand_cursor {
-    position: fixed;
     width: 40px;
     pointer-events: none;
     z-index: 1000;
@@ -279,24 +278,29 @@ main {
 
 .parchment_container {
     display: grid;
-    animation: fadeInUp 0.9s ease forwards;  
+    animation: fadeInUp 10s ease forwards;  
 }
 
+#try {
+    animation: fadeInUp 10s ease forwards;  
+}
+
+
 #parchment1 {
-    animation-delay: 0.3s;
+    animation-delay: 2s;
 }
 
 #parchment2 {
-    animation-delay: 0.6s;
+    animation-delay: 5s;
 }
 
 #parchment3 {
-    animation-delay: 0.9s;
+    animation-delay: 9s;
 }
 
 @keyframes fadeInUp {
     to {
-      opacity: 1;
+      opacity: 0.5;
       transform: translateY(0);
     }
   }
@@ -310,7 +314,7 @@ main {
     transition: transform 0.5s ease, box-shadow 0.8s ease;
     position: relative;
     bottom: 30rem;
-    left: 3rem;
+    left: 2rem;
     padding-bottom: 5rem;
     overflow: hidden;
 }
@@ -334,12 +338,6 @@ main {
     left: 125%;
 }
 
-@keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
 .home_open {
     position: relative;
@@ -507,7 +505,7 @@ main {
     font-family: MontserratRoman-ExtraLight;
     font-weight: lighter;
     transition: transform 0.5s ease, box-shadow 0.8s ease; 
-    animation: fadeInUp 0.8s ease forwards;  
+    animation: fadeInUp 10s ease forwards;  
 }
 
 .project_content:hover {
@@ -517,18 +515,18 @@ main {
 }
 
 #content1 {
-    animation-delay: 0.3s;
+    animation-delay: 2s;
 }
 
 #content2 {
-    animation-delay: 0.8s;
+    animation-delay: 5s;
 }
 
 #content3 {
-    animation-delay: 0.9s;
+    animation-delay: 9s;
 }
 
-@keyframes fadeUp {
+@keyframes fadeInUp {
     to {
       opacity: 1;
       transform: translateY(0);
@@ -568,7 +566,7 @@ h3 {
     padding: 15px;
     text-align: right;
     color: black;
-    font-family: Montserrat;
+    font-family: MontserratRoman-ExtraLight;
     letter-spacing: 0.2rem;
     font-weight: lighter;
 }

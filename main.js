@@ -20,11 +20,6 @@ function setMoodBackground() {
 
 window.onload = setMoodBackground;
 
-const wand = document.getElementById("wand").addEventListener("mousemove", (e) => {
-  wand.style.left = `${e.clientX}px`;
-  wand.style.top = `${e.clientY}px`;
-});
-
 function generateWalkingFootprint() {
     const foot = document.createElement("img");
     foot.src = "./styles/images/shoes-boot-simple-shoes-printing-sports-shoes-hiking-boot-footprint-blackandwhite-png-clipart-removebg-preview.png";
@@ -53,9 +48,7 @@ function generateWalkingFootprint() {
     }, 3000);
   }
   
-  
   setInterval(generateWalkingFootprint, 1000);
-
 
   const text = "I solemnly swear that I am up to no good...";
   const container = document.getElementById("fade-text");
@@ -74,5 +67,40 @@ function generateWalkingFootprint() {
     setTimeout(() => {
       document.getElementById("roll-away").style.display = "none";
       document.getElementById("main-site").style.display = "block";
-    }, 1000); // wait for roll animation to finish
+    }, 1000);
   }, text.length * 90 + 1000);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    document.querySelectorAll('.project_content').forEach(container => {
+      observer.observe(container);
+    });
+  });
+
+  document.querySelectorAll('.parch').forEach(container => {
+    observer.observe(container);
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    const wand = document.querySelector('.wand_cursor');
+    wand.style.left = `${e.clientX}px`;
+    wand.style.top = `${e.clientY}px`;
+  });
+
+  document.addEventListener("click", (e) => {
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+    sparkle.style.left = `${e.pageX}px`;
+    sparkle.style.top = `${e.pageY}px`;
+    document.body.appendChild(sparkle);
+  
+    setTimeout(() => sparkle.remove(), 600);
+  });

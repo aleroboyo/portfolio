@@ -1,7 +1,7 @@
 *,*::before, *::after {
     box-sizing:border-box;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 html, body {
@@ -9,6 +9,7 @@ html, body {
     margin: 0 auto;
     padding: 0;
     cursor: none;
+
 }
 
 @font-face {
@@ -37,10 +38,26 @@ html, body {
 }
 
 .wand_cursor {
-    width: 40px;
+    position: fixed;
+    width: 50px;
     pointer-events: none;
     z-index: 1000;
 }
+
+.sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #fff 30%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle-fade 0.6s ease-out forwards;
+  }
+  
+  @keyframes sparkle-fade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(3); }
+  }
 
 #marauders-intro {
     min-height: 100vh;
@@ -120,6 +137,7 @@ body.night {
     position: relative;
     left: 32%;
     top: 12rem;
+    cursor: none;
 }
 
 /*#explore_bt:hover {
@@ -278,11 +296,21 @@ main {
 
 .parchment_container {
     display: grid;
-    animation: fadeInUp 10s ease forwards;  
+     
 }
 
-#try {
-    animation: fadeInUp 10s ease forwards;  
+.parch {
+    animation: fadeInUp 10s ease forwards; 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 10s ease-out, transform 10s ease-out;
+    cursor: none;
+}
+
+
+.parch.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -317,10 +345,12 @@ main {
     left: 2rem;
     padding-bottom: 5rem;
     overflow: hidden;
+    cursor: none;
 }
 
 .parchment:hover {
     transform: translateY(-5px) scale(1.09);
+   
 }
 
 .parchment::after {
@@ -436,6 +466,7 @@ main {
     background-color: rgb(136, 136, 102);
     border-radius: 1.5rem;
     padding: 1rem;
+    cursor: none;
 }
 
 #my_contact{
@@ -490,9 +521,9 @@ main {
     padding: 3rem;
     text-align: center;
     padding-bottom: 45%;
-    opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 0.6s ease-out forwards;
+  
 }
 
 .project_content {
@@ -505,25 +536,33 @@ main {
     font-family: MontserratRoman-ExtraLight;
     font-weight: lighter;
     transition: transform 0.5s ease, box-shadow 0.8s ease; 
-    animation: fadeInUp 10s ease forwards;  
+    animation: fadeInUp 0.6s ease forwards;  
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 10s ease-out, transform 10s ease-out;
 }
+
+.project_content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .project_content:hover {
     transform: translateY(-5px) scale(1.09);
     box-shadow: 0 0 20px rgba(240, 239, 232, 0.6); 
-    transition: all 0.3s ease-in-out;
+    transition: all 0.9s ease-in-out;
 }
 
 #content1 {
-    animation-delay: 2s;
+    animation-delay: 0.3s;
 }
 
 #content2 {
-    animation-delay: 5s;
+    animation-delay: 0.5s;
 }
 
 #content3 {
-    animation-delay: 9s;
+    animation-delay: 0.9s;
 }
 
 @keyframes fadeInUp {
@@ -560,6 +599,7 @@ h3 {
     padding: 1rem;
     background-color:  rgba(2, 23, 48, 0.672);
     color: white;
+    cursor: none;
 }
 
 .menu {
@@ -575,11 +615,10 @@ h3 {
     font-size: 30px;
     display: flex;
     flex-direction: column;
-    cursor: url("./images/cd87e2c0-90d4-4f25-9268-f88e979680b5_optimized_150.png") 0 0, auto;
     gap: 5px;
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: none;
 }
 
 .hamburger .bar {
@@ -595,7 +634,7 @@ h3 {
     display: none;
     font-size: 30px;
     color: white;
-    cursor: url("./images/cd87e2c0-90d4-4f25-9268-f88e979680b5_optimized_150.png") 0 0, auto;
+    cursor: none;
 }
 
 
@@ -672,6 +711,7 @@ a {
     right: 2.5rem;
     bottom: 3rem;
     border-radius: 2.5rem;
+    cursor: none;
 }
 
 .wel_container {
@@ -695,10 +735,12 @@ footer {
 
 #linkdn {
     width: 40px;
+    cursor: none;
 }
 
 #github {
     width: 40px;
+    cursor: none;
 }
 
 #email_owl {
@@ -711,7 +753,7 @@ footer {
     position: relative;
     bottom: 1rem;
     padding: 1rem;
-    cursor: url("../images/cd87e2c0-90d4-4f25-9268-f88e979680b5_optimized_150.png") 0 0, auto;
+    cursor: none;
 }
 
 #email_bt:hover {

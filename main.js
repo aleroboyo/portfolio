@@ -55,3 +55,24 @@ function generateWalkingFootprint() {
   
   
   setInterval(generateWalkingFootprint, 1000);
+
+
+  const text = "I solemnly swear that I am up to no good...";
+  const container = document.getElementById("fade-text");
+  
+  text.split("").forEach((char, i) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.style.opacity = 0;
+    span.style.animation = `fadeInChar 0.05s ease ${i * 0.09}s forwards`;
+    container.appendChild(span);
+  });
+  
+  setTimeout(() => {
+    document.getElementById("marauders-intro").id = "roll-away";
+  
+    setTimeout(() => {
+      document.getElementById("roll-away").style.display = "none";
+      document.getElementById("main-site").style.display = "block";
+    }, 1000); // wait for roll animation to finish
+  }, text.length * 90 + 1000);

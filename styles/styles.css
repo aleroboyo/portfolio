@@ -1,6 +1,5 @@
 *,*::before, *::after {
     box-sizing:border-box;
-
     margin: 0;
     padding: 0
 }
@@ -32,12 +31,49 @@ html, body {
     src: url("./fonts/HarryPotter-ov4z.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Misteri Caps";
+    src: url("./fonts/MisteriCaps-8Mxyz.ttf") format("truetype");
+}
+
 .wand_cursor {
     position: fixed;
     width: 40px;
     pointer-events: none;
     z-index: 1000;
 }
+
+#marauders-intro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    font-size: 3rem;
+    font-family: Misteri Caps;
+  }
+  
+  @keyframes fadeInChar {
+    to {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes rollUp {
+    0% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-200%);
+      opacity: 0;
+    }
+  }
+  
+  #roll-away {
+    animation: rollUp 3s ease-in forwards;
+  }
 
 #welcome_page {
     display: flex;
@@ -108,8 +144,8 @@ body.night {
     height: 100vh;
     bottom: 20%;
     left: -15%;
-    opacity: 0.3; 
-    animation: drift 10s infinite linear;
+    opacity: 0.2; 
+    animation: drift 20s infinite linear;
 }
 
 .smoke {
@@ -243,8 +279,28 @@ main {
 
 .parchment_container {
     display: grid;
-    animation: fadeUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.9s ease forwards;  
 }
+
+#parchment1 {
+    animation-delay: 0.3s;
+}
+
+#parchment2 {
+    animation-delay: 0.6s;
+}
+
+#parchment3 {
+    animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 
 .parchment {
     display: block;
@@ -450,7 +506,8 @@ main {
     margin-bottom: 3rem;
     font-family: MontserratRoman-ExtraLight;
     font-weight: lighter;
-    transition: transform 0.5s ease, box-shadow 0.8s ease;   
+    transition: transform 0.5s ease, box-shadow 0.8s ease; 
+    animation: fadeInUp 0.8s ease forwards;  
 }
 
 .project_content:hover {

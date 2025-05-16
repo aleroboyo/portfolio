@@ -89,11 +89,18 @@ function generateWalkingFootprint() {
     observer.observe(container);
   });
 
+  let wand = document.querySelector('.wand_cursor')
+
+  document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('mousemove', (e) => {
-    const wand = document.querySelector('.wand_cursor');
-    wand.style.left = `${e.clientX}px`;
-    wand.style.top = `${e.clientY}px`;
-  });
+    let x = e.clientX
+    let y = e.clientY
+
+    wand.style.left = `${x}px`
+    wand.style.top = `${y}px`
+
+  })
+})
 
   document.addEventListener("click", (e) => {
     const sparkle = document.createElement("div");

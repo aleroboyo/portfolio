@@ -2,13 +2,14 @@
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+    cursor: none;
 }
 
 html, body {
     height: 100vh;
     margin: 0 auto;
     padding: 0;
-    cursor: none;
+    
 
 }
 
@@ -609,6 +610,7 @@ h3 {
     font-family: MontserratRoman-ExtraLight;
     letter-spacing: 0.2rem;
     font-weight: lighter;
+    cursor: none;
 }
 
 .hamburger {
@@ -628,6 +630,7 @@ h3 {
     position: relative;
     left: 1rem;
     bottom: 3rem;
+    cursor: none;
 }
 
 .hamburger .close {
@@ -642,11 +645,13 @@ li {
     list-style: none;
     padding: 10px;
     text-decoration: none;
+    cursor: none;
 }
 
 a {
     text-decoration: none;
     color: white;
+    cursor: none;
 }
 
 .nav_links {
@@ -664,7 +669,6 @@ a {
     color: white;
     z-index: 999;
     text-align: left ;
-    
 }
 
 .menu.active .nav_links {

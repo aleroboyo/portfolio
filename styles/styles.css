@@ -140,10 +140,10 @@ body.night {
     cursor: none;
 }
 
-/*#explore_bt:hover {
+#explore_bt:hover {
     background: #f3e1ab;
     color: #000;
-}*/
+}
 
 .smoke_container {
     position: absolute;
@@ -249,7 +249,6 @@ main {
 
 #candle4 {
     position: relative;
-    bottom: 12rem;
     left: 12rem;
 }
 
@@ -349,8 +348,7 @@ main {
 }
 
 .parchment:hover {
-    transform: translateY(-5px) scale(1.09);
-   
+    transform: translateY(-5px) scale(1.09); 
 }
 
 .parchment::after {
@@ -382,6 +380,7 @@ main {
 #home_words {
     font-family: MontserratRoman-ExtraLight;
     font-size: 1.5rem;
+    font-weight: lighter;
 }
 
 .footer_bg {
@@ -701,12 +700,14 @@ a {
     border-style: solid;
     font-family: Montserrat-Thin;
     padding: 10px;
+    
 }
 
-/*.close:hover {
+.close:hover {
     color: black;
     background-color: white;
-}*/
+    font-weight: bolder;
+}
 
 #logo {
     width: 9rem;
@@ -768,7 +769,144 @@ footer {
     font-weight: bolder;
 }
 
+/* Targeting other screen size */
 
+@media (min-width: 600px) {
+
+    #wel_mes {
+        margin-left: 1rem;
+        font-size: 6.5rem;
+        text-align: left;
+        margin-bottom: 3rem;
+    }
+
+    #explore_bt {
+        position: relative;
+        left: 1rem;
+    }
+
+   .hamburger {
+        display: none;
+   }
+
+   .nav_links{
+        display: flex;
+        background-color: transparent;
+   }
+
+   .nav_links ul {
+        display: flex;
+        text-align: right;
+        gap: 2rem;
+        position: static;
+        position: relative;
+        left: 30rem;
+        bottom: 3rem;
+        scroll-behavior: auto;
+   }
+
+   .nav_links li:hover {
+        text-shadow: 0 0 20px rgba(240, 239, 232, 0.6); 
+        transition: all 0.9s ease-in-out;
+   }
+
+   .close {
+        display: none;
+   }
+  
+   .parchment {
+        margin-bottom: -5rem;
+        padding-bottom: -50rem;
+        width: 25rem;
+   }
+
+   #parchment2 {
+        position: relative;
+        left: 64rem;
+        bottom: 55rem;
+   }
+
+   #parchment3 {
+        position: relative;
+        left: 34rem;
+        bottom: 48rem;
+    }
+
+    #candle1 {
+        position: relative;
+        bottom: 8rem;
+        left: 8rem;
+    }
+
+    #candle2 {
+        position: relative;
+        bottom: 5rem;
+        left: 27rem;
+    }
+
+    #candle3 {
+        position: relative;
+        bottom: 20rem;
+        left: 47em;
+    }
+
+    #candle4 {
+        position: relative;
+        bottom: 8rem;
+        left: 66rem;
+    }
+
+    #candle5 {
+        position: relative;
+        top: 15rem;
+    }
+
+    #candle6 {
+        position: relative;
+        top: 50rem;
+        left: 12rem;
+    }
+
+    #candle7 {
+        position: relative;
+        top: 25rem;
+        left: 33rem;
+    }
+
+    #candle8 {
+        position: relative;
+        top: 38rem;
+        left: 56.3rem;
+    }
+
+    #candle9 {
+        position: relative;
+        top: 16rem;
+        left: 75rem;
+    }
+
+    #profile {
+        margin-right: 5rem;  
+    }
+
+    .aboutme_details {
+        font-size: 1.5rem;
+    }
+
+    #my_contact:hover,
+    #my_resume:hover {
+        background-color: rgb(250, 250, 232);
+        color: rgb(89, 89, 77);
+        font-weight: bolder;
+    }
+
+    #live:hover {
+        background-color:  rgba(209, 229, 255, 0.672);
+        color: rgba(2, 23, 48, 0.672);
+        font-weight: bolder;
+    }
+
+}
 
 
   

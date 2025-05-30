@@ -818,7 +818,34 @@ footer {
         margin-bottom: -5rem;
         padding-bottom: -50rem;
         width: 25rem;
+        pointer-events: auto;
+        z-index: 10;
+        transition: transform 0.3s ease;
    }
+
+    .parchment:hover {
+        transform: translateY(-5px) scale(1.09);
+        z-index: 10;
+    }
+
+   .parchment:hover {
+        transform: translateY(-5px) scale(1.09); 
+    }
+
+    .parchment::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transform: skewX(-25deg);
+        transition: left 0.7s ease-in-out;
+    }
+
+    .parchment:hover::after {
+        left: 125%;
+    }
 
    #parchment2 {
         position: relative;

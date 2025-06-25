@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const musicState = localStorage.getItem('hp-music')
   const savedTime = localStorage.getItem('hp-time')
 
+  if (!localStorage.getItem('hp-music')) {
+    localStorage.setItem('hp-music', 'on')
+  }
+  
   if (hpTheme && musicState === 'on') {
     hpTheme.volume = 0
     hpTheme.loop = true
